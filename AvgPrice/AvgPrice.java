@@ -55,8 +55,8 @@ public class AvgPrice
         }
     }
 
-    /* input:  <Movie Category, Rating>
-     * output: <Movie Category, Max_Rating>
+    /* input:  <zipcode, price>
+     * output: <zipcode, avg_price>
      */
     public static class Reduce extends Reducer<Text, DoubleWritable, Text, DoubleWritable>
     {

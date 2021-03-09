@@ -1,5 +1,5 @@
 # Hadoop Examples
-Some simple, kinda introductory projects based on Apache Hadoop to be used as guides to make the MapReduce model look less weird or boring.
+Some simple, kinda introductory projects based on Apache Hadoop to be used as guides in order to make the MapReduce model look less weird or boring.
 
 ## Preparations & Prerequisites
 * [Latest stable version](https://hadoop.apache.org/docs/current/) of Hadoop or at least the one used here, [3.3.0](https://hadoop.apache.org/docs/r3.3.0/).

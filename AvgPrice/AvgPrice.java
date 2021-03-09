@@ -28,68 +28,68 @@ hadoop fs -cat average_prices/part-r-00000
 
 public class AvgPrice 
 {
-	/* input:  <byte_offset, line_of_dataset>
+    /* input:  <byte_offset, line_of_dataset>
      * output: <zipcode, price>
      */
-	public static class Map extends Mapper<Object, Text, Text, DoubleWritable> 
-	{
-		public void map(Object key, Text value, Context context) throws IOException, InterruptedException 
-		{
-			try 
-			{ 
-	            if(value.toString().contains("Address")) // remove header
-	                return;
-	            else 
-	            {
-	                String[] data = value.toString().split(",");
-	                String zipcode = data[3];
-	                DoubleWritable price = new DoubleWritable(Double.parseDouble(data[4]));
+    public static class Map extends Mapper<Object, Text, Text, DoubleWritable> 
+    {
+        public void map(Object key, Text value, Context context) throws IOException, InterruptedException 
+        {
+            try 
+            { 
+                if(value.toString().contains("Address")) // remove header
+                    return;
+                else 
+                {
+                    String[] data = value.toString().split(",");
+                    String zipcode = data[3];
+                    DoubleWritable price = new DoubleWritable(Double.parseDouble(data[4]));
 
-	                context.write(new Text(zipcode), price);
-	            }
-	        } 
-	        catch (Exception e) 
-	        {
-	            e.printStackTrace();
-	        }
-		}
-	}
+                    context.write(new Text(zipcode), price);
+                }
+            } 
+            catch (Exception e) 
+            {
+                e.printStackTrace();
+            }
+        }
+    }
 
-	/* input:  <Movie Category, Rating>
+    /* input:  <Movie Category, Rating>
      * output: <Movie Category, Max_Rating>
      */
-	public static class Reduce extends Reducer<Text, DoubleWritable, Text, DoubleWritable>
-	{
-		public void reduce(Text key, Iterable<DoubleWritable> values, Context context) throws IOException, InterruptedException 
-	    {
-			double sum = 0;
-			int num_of_prices = 0;
+    public static class Reduce extends Reducer<Text, DoubleWritable, Text, DoubleWritable>
+    {
+        public void reduce(Text key, Iterable<DoubleWritable> values, Context context) throws IOException, InterruptedException 
+        {
+            double sum = 0;
+            int num_of_prices = 0;
 
             for(DoubleWritable value : values)
             {
-            	sum += value.get();
-            	num_of_prices++;
+                sum += value.get();
+                num_of_prices++;
             }
 
-			context.write(key, new DoubleWritable((double) sum / num_of_prices));
-		}
-	}
+            context.write(key, new DoubleWritable((double) sum / num_of_prices));
+        }
+    }
 
 
-	public static void main(String[] args) throws Exception
-	{
-		// set the paths of the input and output directories in the HDFS
-		Path input_dir = new Path("address_book");
-		Path output_dir = new Path("average_prices");
+    public static void main(String[] args) throws Exception
+    {
+        // set the paths of the input and output directories in the HDFS
+        Path input_dir = new Path("address_book");
+        Path output_dir = new Path("average_prices");
 
-		// in case the output directory already exists, delete it
-		Configuration conf = new Configuration();
-		FileSystem fs = FileSystem.get(conf);
+        // in case the output directory already exists, delete it
+        Configuration conf = new Configuration();
+        FileSystem fs = FileSystem.get(conf);
         if(fs.exists(output_dir))
             fs.delete(output_dir, true);
 
         // configure the MapReduce job
-		Job AvgPrice_job = Job.getInstance(conf, "Average Price");
+        Job AvgPrice_job = Job.getInstance(conf, "Average Price");
         AvgPrice_job.setJarByClass(AvgPrice.class);
         AvgPrice_job.setMapperClass(Map.class);
         AvgPrice_job.setCombinerClass(Reduce.class);
@@ -101,5 +101,5 @@ public class AvgPrice
         FileInputFormat.addInputPath(AvgPrice_job, input_dir);
         FileOutputFormat.setOutputPath(AvgPrice_job, output_dir);
         AvgPrice_job.waitForCompletion(true);
-	}
+    }
 }

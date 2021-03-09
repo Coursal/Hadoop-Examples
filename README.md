@@ -13,7 +13,10 @@ Each project comes with its very own:
 
 The projects featured in this repo are:
 
-#### [Bank Transfer](https://github.com/Coursal/Hadoop-Examples/tree/main/BankTransfers)
+#### [AvgPrice](https://github.com/Coursal/Hadoop-Examples/tree/main/AvgPrice)
+Calculating the average price of houses for sale by zipcode.
+
+#### [BankTransfers](https://github.com/Coursal/Hadoop-Examples/tree/main/BankTransfers)
 A typical "sum-it-up" example where for each bank we calculate the number and the sum of its transfers.
 
 #### [MaxTemp](https://github.com/Coursal/Hadoop-Examples/tree/main/MaxTemp)

@@ -34,6 +34,9 @@ Finding the oldest tree per city district. Child's play.
 #### [ScoreComp](https://github.com/Coursal/Hadoop-Examples/tree/main/ScoreComp)
 The most challenging and abstract one. Every key-character (`A`-`E`) has 3 numbers as values, two negatives and one positive. We just calculate the score for every character based on the following expression `character_score = pos / (-1 * (neg_1 + neg_2))`.
 
+#### [SymDiff](https://github.com/Coursal/Hadoop-Examples/tree/main/SymDiff)
+A simple way to calculate the symmetric difference between the records of two files, based on each record's ID.
+
 ---
 
 _Check out the equivalent **Spark Examples** [here](https://github.com/Coursal/Spark-Examples)._

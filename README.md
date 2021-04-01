@@ -38,7 +38,7 @@ The most challenging and abstract one. Every key-character (`A`-`E`) has 3 numbe
 A simple way to calculate the symmetric difference between the records of two files, based on each record's ID.
 
 #### [PatientFilter](https://github.com/Coursal/Hadoop-Examples/tree/main/PatientFilter)
-Filtering out patients' records where their number of cycles column is equal to `1` and their counseling column is equal to `No`.
+Filtering out patients' records where their `PatientCycleNum` column is equal to `1` and their `Counseling` column is equal to `No`.
 
 ---
 

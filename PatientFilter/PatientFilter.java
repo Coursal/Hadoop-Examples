@@ -21,8 +21,8 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main PatientFilter.java
-jar cf PatientFilter.jar PatientFilter*.class
+javac -classpath "$(yarn classpath)" -d . PatientFilter.java 
+jar -cvf PatientFilter.jar -C . .
 hadoop jar PatientFilter.jar PatientFilter
 hadoop fs -cat patients_out/part-r-00000
 */

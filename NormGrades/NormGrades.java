@@ -23,8 +23,8 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main NormGrades.java
-jar cf NormGrades.jar NormGrades*.class
+javac -classpath "$(yarn classpath)" -d . NormGrades.java 
+jar -cvf NormGrades.jar -C . .
 hadoop jar NormGrades.jar NormGrades
 hadoop fs -cat normalized_grades/part-r-00000
 */

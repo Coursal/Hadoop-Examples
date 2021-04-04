@@ -21,8 +21,8 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main OldestTree.java
-jar cf OldestTree.jar OldestTree*.class
+javac -classpath "$(yarn classpath)" -d . OldestTree.java 
+jar -cvf OldestTree.jar -C . .
 hadoop jar OldestTree.jar OldestTree
 hadoop fs -cat oldest_tree/part-r-00000
 */

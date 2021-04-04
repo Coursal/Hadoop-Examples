@@ -20,10 +20,10 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main SymDiff.java
-jar cf SymDiff.jar SymDiff*.class
+javac -classpath "$(yarn classpath)" -d . SymDiff.java 
+jar -cvf SymDiff.jar -C . .
 hadoop jar SymDiff.jar SymDiff
-hadoop fs -cat output/part-r-00000
+hadoop fs -cat set_output/part-r-00000
 */
 
 public class SymDiff 
@@ -73,8 +73,8 @@ public class SymDiff
     public static void main(String[] args) throws Exception
     {
         // set the paths of the input and output directories in the HDFS
-        Path input_dir = new Path("input");
-        Path output_dir = new Path("output");
+        Path input_dir = new Path("set_input");
+        Path output_dir = new Path("set_output");
 
         // in case the output directory already exists, delete it
         Configuration conf = new Configuration();

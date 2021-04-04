@@ -20,8 +20,8 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main AvgPrice.java
-jar cf AvgPrice.jar AvgPrice*.class
+javac -classpath "$(yarn classpath)" -d . AvgPrice.java 
+jar -cvf AvgPrice.jar -C . .
 hadoop jar AvgPrice.jar AvgPrice
 hadoop fs -cat average_prices/part-r-00000
 */

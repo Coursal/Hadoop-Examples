@@ -19,8 +19,8 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main Bank_Transfers.java
-jar cf Bank_Transfers.jar Bank_Transfers*.class
+javac -classpath "$(yarn classpath)" -d . Bank_Transfers.java 
+jar -cvf Bank_Transfers.jar -C . .
 hadoop jar Bank_Transfers.jar Bank_Transfers
 hadoop fs -cat bank_output/part-r-00000
 */

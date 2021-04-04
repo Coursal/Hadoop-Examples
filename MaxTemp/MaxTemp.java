@@ -20,8 +20,8 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main MaxTemp.java
-jar cf MaxTemp.jar MaxTemp*.class
+javac -classpath "$(yarn classpath)" -d . MaxTemp.java 
+jar -cvf MaxTemp.jar -C . .
 hadoop jar MaxTemp.jar MaxTemp
 hadoop fs -cat temp_out/part-r-00000
 */

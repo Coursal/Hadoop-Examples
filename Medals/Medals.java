@@ -21,8 +21,8 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main Medals.java
-jar cf Medals.jar Medals*.class
+javac -classpath "$(yarn classpath)" -d . Medals.java 
+jar -cvf Medals.jar -C . .
 hadoop jar Medals.jar Medals
 hadoop fs -cat medals/part-r-00000
 */

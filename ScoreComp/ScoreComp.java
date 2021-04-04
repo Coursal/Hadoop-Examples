@@ -20,8 +20,8 @@ import java.nio.charset.StandardCharsets;
 
 /*
 Execution Guide:
-hadoop com.sun.tools.javac.Main ScoreComp.java
-jar cf ScoreComp.jar ScoreComp*.class
+javac -classpath "$(yarn classpath)" -d . ScoreComp.java 
+jar -cvf ScoreComp.jar -C . .
 hadoop jar ScoreComp.jar ScoreComp
 hadoop fs -cat scores/part-r-00000
 */

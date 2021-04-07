@@ -23,7 +23,7 @@ A typical "sum-it-up" example where for each bank we calculate the number and th
 Typical case of finding the max recorded temperature for every city.
 
 #### [Medals](https://github.com/Coursal/Hadoop-Examples/tree/main/Medals)
-An interesting application of working on Olympic game stats  in order to see the total wins of gold, silver, and bronze medals of every athlete.
+An interesting application of working on Olympic game stats in order to see the total wins of gold, silver, and bronze medals of every athlete.
 
 #### [NormGrades](https://github.com/Coursal/Hadoop-Examples/tree/main/NormGrades)
 Just a plain old normalization example for a bunch of students and their grades.
@@ -32,7 +32,7 @@ Just a plain old normalization example for a bunch of students and their grades.
 Finding the oldest tree per city district. Child's play.
 
 #### [ScoreComp](https://github.com/Coursal/Hadoop-Examples/tree/main/ScoreComp)
-The most challenging and abstract one. Every key-character (`A`-`E`) has 3 numbers as values, two negatives and one positive. We just calculate the score for every character based on the following expression `character_score = pos / (-1 * (neg_1 + neg_2))`.
+A bit more challenging than the rest. Every key-character (`A`-`E`) has 3 numbers as values, two negatives and one positive. We just calculate the score for every character based on the following expression `character_score = pos / (-1 * (neg_1 + neg_2))`.
 
 #### [SymDiff](https://github.com/Coursal/Hadoop-Examples/tree/main/SymDiff)
 A simple way to calculate the symmetric difference between the records of two files, based on each record's ID.
@@ -42,6 +42,9 @@ Filtering out patients' records where their `PatientCycleNum` column is equal to
 
 #### [ReadFolderFiles](https://github.com/Coursal/Hadoop-Examples/tree/main/ReadFolderFiles)
 Reading a number of files with multiple lines and converting them into key-value pairs with each file's name as key and each file's content as value.
+
+#### [MaxTF](https://github.com/Coursal/Hadoop-Examples/tree/main/MaxTF)
+The most challenging yet. Τerm frequency is being calculated from 5 input documents. The goal is to find the document with the max TF for each word and how many documents contain that said word.
 
 ---
 

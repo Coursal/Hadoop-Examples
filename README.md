@@ -8,7 +8,7 @@ Some simple, kinda introductory projects based on Apache Hadoop to be used as gu
 
 ## Projects
 Each project comes with its very own:
-* **input data** (`.csv` files in a folder ready to be copied to the HDFS). 
+* **input data** (`.csv`, `.tsv`, or simple text files in a folder ready to be copied to the HDFS). 
 * **execution guide** (found in the source code of each project _but_ also being heavily dependent of your setup of java and environment variables, so in case the guide doesn't work, you can always google/yahoo/bing/altavista your way to execution).
 
 The projects featured in this repo are:
@@ -45,6 +45,9 @@ Reading a number of files with multiple lines and converting them into key-value
 
 #### [MaxTF](https://github.com/Coursal/Hadoop-Examples/tree/main/MaxTF)
 The most challenging yet. Τerm frequency is being calculated from 5 input documents. The goal is to find the document with the max TF for each word and how many documents contain that said word.
+
+#### [TopWords](https://github.com/Coursal/Hadoop-Examples/tree/main/TopWords)
+A simple merge of `WordCount` and `TopN` examples to find the 10 most used words in 5 input documents.
 
 ---
 

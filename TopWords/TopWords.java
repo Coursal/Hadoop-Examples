@@ -145,7 +145,7 @@ public class TopWords
         {
             // write the topN global words with each word as key and its wordcount as value
             // so the output will be sorted by the wordcount
-            for (Map.Entry<Integer, String> entry : word_list.entrySet())
+            for(Map.Entry<Integer, String> entry : word_list.entrySet())
             {
                 context.write(new IntWritable(entry.getKey()), new Text(entry.getValue()));
             }

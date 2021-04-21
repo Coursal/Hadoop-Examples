@@ -71,7 +71,7 @@ public class TopWords
 
 
     /* input:  <word, wordcount>
-     * output: <NULL, (word, wordcount)> (with the local topN words)
+     * output: <word, wordcount> (with the local topN words)
      */
     public static class TopNMapper extends Mapper<Object, Text, Text, IntWritable>
     {
